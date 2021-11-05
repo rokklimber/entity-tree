@@ -4,7 +4,7 @@
 * See example commandline application for simple code
 runner
 
-####Example Code Usage
+#### Example Code Usage
       String inputData =
                 "null,0,grandpa|0,1,son|0,2,daugther|1,3,grandkid|1,4,grandkid|2,5,grandkid|5,6,greatgrandkid";
       log.severe("Converting default input to tree form: " + inputData);
