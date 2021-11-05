@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Profile;
 
-@Profile("standalone")
+@Profile("default")
 @SpringBootApplication
 @Log
 public class EntityTreeCommandLineApplication implements CommandLineRunner {
@@ -20,7 +20,7 @@ public class EntityTreeCommandLineApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         String inputData =
                 "null,0,grandpa|0,1,son|0,2,daugther|1,3,grandkid|1,4,grandkid|2,5,grandkid|5,6,greatgrandkid";
         log.severe("Converting default input to tree form: " + inputData);
