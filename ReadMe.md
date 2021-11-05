@@ -2,6 +2,8 @@
 ## Standalone code
 * code can be found in com.example.entityTree package
 * See example commandline application for simple code
+
+NOTE: parent id is not shown in tree view since the parent node is part of the structure
 runner
 
 #### Example Code Usage
@@ -10,6 +12,10 @@ runner
       log.severe("Converting default input to tree form: " + inputData);
       EntityTree tree = controller.getEntityTree(inputData);
       System.out.println(tree);
+
+#### Example Output
+    Entity{id=0, name='grandpa', children=[Entity{id=1, name='son', children=[Entity{id=3, name='grandkid', children=[]}, Entity{id=4, name='grandkid', children=[]}]}, Entity{id=2, name='daugther', children=[Entity{id=5, name='grandkid', children=[Entity{id=6, name='greatgrandkid', children=[]}]}]}]}
+
 ## Running the REST application
 * from gradle
   
