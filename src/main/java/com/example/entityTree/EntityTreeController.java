@@ -6,9 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.java.Log;
 import org.apache.commons.lang3.tuple.Pair;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -23,7 +21,7 @@ public class EntityTreeController {
     EntityTree getEntityTree(@RequestBody String treeDataText) {
         return Collections.list(new StringTokenizer(treeDataText, "|")).stream()
                 .map(entityText -> {
-                    String entityValues[] = ((String)entityText).split(",");
+                    String[] entityValues = ((String)entityText).split(",");
                     boolean parentIsNull = entityValues[0].equals("null");
                     return Pair.of(parentIsNull ? -1 : Integer.parseInt(entityValues[0]), Entity.builder()
                             .id(Integer.parseInt(entityValues[1]))
