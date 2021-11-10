@@ -59,9 +59,6 @@ public class EntityTreeController {
         } else throw new NoSuchElementException("Element with id: " + nodeId + " no found");
 
         Collections.reverse(response);
-        response.forEach(node -> node.setParent(null));
-
-        List<NodeInfo> infoResponse = new ArrayList<>();
         return response.stream().sorted().map(node -> {
             NodeInfo element = new NodeInfo();
             element.setName(node.getName());
