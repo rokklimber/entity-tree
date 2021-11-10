@@ -60,6 +60,10 @@ public class EntityTree {
             return allNodes.get(parentId).getChildren().stream().map(Entity::getId).collect(Collectors.toList());
     }
 
+    public Optional<Entity> getSubTree(int rootId) {
+        return getById(rootId);
+    }
+
     @JsonIgnore
     public ImmutableList<Entity> getAll()
     {

@@ -1,5 +1,6 @@
 package com.example.entityTree;
 
+import com.example.entityTree.data.Entity;
 import com.example.entityTree.data.EntityTree;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,9 @@ public class EntityTreeCommandLineApplication implements CommandLineRunner {
                 "null,0,grandpa|0,1,son|0,2,daugther|1,3,grandkid|1,4,grandkid|2,5,grandkid|5,6,greatgrandkid";
         log.severe("Converting default input to tree form: " + inputData);
         EntityTree tree = controller.getEntityTree(inputData);
+        //Entity subTree = controller.getEntitySubTree(inputData, 1);
         System.out.println(tree);
-        System.exit(0);
+        //System.out.println(subTree);
+        //System.exit(0);
     }
 }
